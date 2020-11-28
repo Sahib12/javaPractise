@@ -2,6 +2,7 @@ package com.example.demo;
 
 import java.util.ArrayList;
 
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,5 +22,13 @@ public class OnlyController {
 	@RequestMapping("/details")
 	public ArrayList<Details> getDetails(){
 		return arr;
+	}
+	
+	@RequestMapping("/details/{id}")
+	public Details getDetails(@PathVariable String id){
+		for(int i = 0; i < arr.size(); i++) {
+			if(arr.get(i).getName().equals(id)) return arr.get(i);
+		}
+		return null;
 	}
 }

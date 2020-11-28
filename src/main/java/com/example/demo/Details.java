@@ -13,6 +13,7 @@ public class Details {
 	private String phoneNumber;
 	private String programingSkills;
 	private String tmay;
+
 	public String getName() {
 		return name;
 	}
