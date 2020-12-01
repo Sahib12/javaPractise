@@ -11,7 +11,7 @@ public class Details {
 	private String state;
 	private String country;
 	private String phoneNumber;
-	private String programingSkills;
+	private String[] programingSkills;
 	private String tmay;
 
 	public String getName() {
@@ -68,10 +68,10 @@ public class Details {
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
-	public String getProgramingSkills() {
+	public String[] getProgramingSkills() {
 		return programingSkills;
 	}
-	public void setProgramingSkills(String programingSkills) {
+	public void setProgramingSkills(String[] programingSkills) {
 		this.programingSkills = programingSkills;
 	}
 	public String getTmay() {
