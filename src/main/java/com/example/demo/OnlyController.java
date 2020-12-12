@@ -33,4 +33,12 @@ public class OnlyController {
 		}
 		return null;
 	}
+	
+	@RequestMapping("/details/delete/{id}")
+	public Details deleteDetails(@PathVariable String id){
+		for(int i = 0; i < arr.size(); i++) {
+			if(arr.get(i).getName().equals(id)) arr.remove(i);
+		}
+		return null;
+	}
 }
