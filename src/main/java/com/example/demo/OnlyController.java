@@ -50,6 +50,17 @@ public class OnlyController {
 		return null;
 	}
 	
+	@RequestMapping(path="/details/{id}", method=RequestMethod.PUT)
+	public Details updateDetails(@RequestBody Details details, @PathVariable String id){
+		for(int i = 0; i < arr.size(); i++) {
+			if(arr.get(i).getName().equals(id)) {
+				arr.remove(i);
+				arr.add(details);
+			}
+		}
+		return null;
+	}
+	
 	@RequestMapping("/details/delete")
 	public Details deleteDetails1(@RequestBody Details details){
 		for(int i = 0; i < arr.size(); i++) {
