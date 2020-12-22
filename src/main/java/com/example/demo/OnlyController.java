@@ -56,6 +56,7 @@ public class OnlyController {
 			if(arr.get(i).getName().equals(id)) {
 				arr.remove(i);
 				arr.add(details);
+				return details;
 			}
 		}
 		return null;
