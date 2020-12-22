@@ -2,6 +2,8 @@ package com.example.demo;
 
 import java.util.ArrayList;
 
+import javax.xml.soap.Detail;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,6 +19,9 @@ public class OnlyController {
 
 	@RequestMapping(method=RequestMethod.POST, path="/details")
 	public String postDetails(@RequestBody Details details) {
+		for(Details detail: arr) {
+			if(detail.getName().equalsIgnoreCase(details.getName())) return "Primary key already exists";
+		}
 		arr.add(details);
 		return "Data saved successfully";
 	}
